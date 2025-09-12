@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IBR Peritajes y Avalúos</title>
+  <meta name="description" content="Página web oficial de IBR dedicada a peritajes y avalúos de bienes inmuebles urbanos y rurales en Ibagué, Tolima y a nivel nacional.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-xl font-bold text-red-700">IBR Peritajes & Avalúos</h1>
+      <nav class="space-x-4">
+        <a href="#servicios" class="hover:text-red-600">Servicios</a>
+        <a href="#nosotros" class="hover:text-red-600">Quiénes Somos</a>
+        <a href="#contacto" class="hover:text-red-600">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-gray-100 py-20 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold">Peritajes y Avalúos Profesionales</h2>
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      Avalúos urbanos y rurales, avalúos judiciales y peritajes técnicos con respaldo legal y profesional.
+    </p>
+    <a href="#contacto" class="mt-6 inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700">
+      Solicitar Avalúo
+    </a>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-2xl font-semibold mb-6">Nuestros Servicios</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 border rounded-xl shadow-sm">
+        <h4 class="font-semibold text-lg mb-2">Avalúos Urbanos</h4>
+        <p class="text-sm text-gray-600">Casas, apartamentos, lotes urbanos para compra, venta o trámites notariales.</p>
+      </div>
+      <div class="p-6 border rounded-xl shadow-sm">
+        <h4 class="font-semibold text-lg mb-2">Avalúos Rurales</h4>
+        <p class="text-sm text-gray-600">Fincas, cultivos, terrenos rurales y avalúos integrales con mejoras.</p>
+      </div>
+      <div class="p-6 border rounded-xl shadow-sm">
+        <h4 class="font-semibold text-lg mb-2">Peritajes Judiciales</h4>
+        <p class="text-sm text-gray-600">Auxiliares de la justicia, dictámenes periciales y soporte legal especializado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-4">Quiénes Somos</h3>
+      <p class="text-gray-600">
+        En IBR contamos con experiencia profesional en avalúos y peritajes de bienes inmuebles urbanos y rurales. 
+        Ofrecemos informes claros, técnicos y legales que garantizan seguridad en tus decisiones inmobiliarias.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-2xl font-semibold mb-6 text-center">Contacto</h3>
+    <div class="grid md:grid-cols-2 gap-6 text-center md:text-left">
+      <div>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/573219397333" class="text-red-600 hover:underline">+57 321 939 7333</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@ibringenieria.co" class="text-red-600 hover:underline">info@ibringenieria.co</a></p>
+        <p><strong>Ciudad:</strong> Ibagué, Tolima — Colombia</p>
+      </div>
+      <div>
+        <p class="text-gray-600">Escríbenos y recibe asesoría rápida y profesional en peritajes y avalúos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600 border-t">
+    © <span id="y"></span> IBR Peritajes y Avalúos — Todos los derechos reservados.
+  </footer>
+
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>
