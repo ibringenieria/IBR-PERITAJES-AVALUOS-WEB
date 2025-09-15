@@ -1,90 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IBR Peritajes y Avalúos</title>
-  <meta name="description" content="Página web oficial de IBR dedicada a peritajes y avalúos de bienes inmuebles urbanos y rurales en Ibagué, Tolima y a nivel nacional.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IBR Peritajes & Avalúos</title>
+  <meta name="description" content="Peritajes y avalúos de bienes inmuebles urbanos y rurales. Avalúos judiciales, peritajes técnicos y soporte legal en Ibagué, Tolima y a nivel nacional.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔎</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-red': '#D32F2F',
+            'brand-yellow': '#F9A825',
+            'brand-black': '#111827',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Poppins',sans-serif}</style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="text-brand-black bg-white">
+
+  <!-- Top bar WhatsApp -->
+  <div class="w-full bg-brand-black text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-end gap-4">
+      <span>WhatsApp: <a href="https://wa.me/573219397333" class="font-medium text-brand-yellow hover:underline">+57 321 939 7333</a></span>
+      <a href="https://wa.me/573219397333" class="px-3 py-1 rounded-lg bg-brand-red hover:brightness-95">Hablar por WhatsApp</a>
+    </div>
+  </div>
 
   <!-- Header -->
-  <header class="sticky top-0 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-xl font-bold text-red-700">IBR Peritajes & Avalúos</h1>
-      <nav class="space-x-4">
-        <a href="#servicios" class="hover:text-red-600">Servicios</a>
-        <a href="#nosotros" class="hover:text-red-600">Quiénes Somos</a>
-        <a href="#contacto" class="hover:text-red-600">Contacto</a>
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Cambia el src si subes tu logo como logo-peritajes.png -->
+        <img src="logo-peritajes.png" onerror="this.style.display='none'" alt="IBR Peritajes & Avalúos" class="h-8 w-auto">
+        <div class="hidden sm:block">
+          <p class="font-bold leading-tight">IBR Peritajes & Avalúos</p>
+          <p class="text-xs text-zinc-500">Ibagué – Tolima – Colombia</p>
+        </div>
+      </a>
+
+      <nav id="nav" class="hidden md:flex items-center gap-6">
+        <a class="hover:text-brand-red" href="#servicios">Servicios</a>
+        <a class="hover:text-brand-red" href="#proceso">Proceso</a>
+        <a class="hover:text-brand-red" href="#por-que">¿Por qué elegirnos?</a>
+        <a class="hover:text-brand-red" href="#contacto">Contacto</a>
+        <a href="brochure.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 text-white hover:brightness-95">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/></svg>
+          Brochure
+        </a>
+        <a href="https://wa.me/573219397333" class="px-4 py-2 rounded-xl bg-brand-red text-white hover:brightness-95">WhatsApp</a>
       </nav>
+
+      <button class="md:hidden p-2 rounded-lg border" aria-label="Abrir menú" onclick="document.getElementById('mobile').classList.toggle('hidden')">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile" class="md:hidden hidden border-t">
+      <div class="px-4 py-3 flex flex-col gap-3">
+        <a class="hover:text-brand-red" href="#servicios" onclick="this.closest('#mobile').classList.add('hidden')">Servicios</a>
+        <a class="hover:text-brand-red" href="#proceso" onclick="this.closest('#mobile').classList.add('hidden')">Proceso</a>
+        <a class="hover:text-brand-red" href="#por-que" onclick="this.closest('#mobile').classList.add('hidden')">¿Por qué elegirnos?</a>
+        <a class="hover:text-brand-red" href="#contacto" onclick="this.closest('#mobile').classList.add('hidden')">Contacto</a>
+        <div class="flex gap-2">
+          <a href="brochure.pdf" target="_blank" class="flex-1 text-center px-4 py-2 rounded-xl bg-zinc-900 text-white hover:brightness-95">Brochure</a>
+          <a href="https://wa.me/573219397333" class="flex-1 text-center px-4 py-2 rounded-xl bg-brand-red text-white hover:brightness-95">WhatsApp</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="relative bg-gray-100 py-20 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold">Peritajes y Avalúos Profesionales</h2>
-    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-      Avalúos urbanos y rurales, avalúos judiciales y peritajes técnicos con respaldo legal y profesional.
-    </p>
-    <a href="#contacto" class="mt-6 inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700">
-      Solicitar Avalúo
-    </a>
+  <section id="hero" class="relative min-h-[58vh]">
+    <!-- Cambia a fondo.jpg si lo subiste -->
+    <img src="fondo.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1581091014534-8987c1d647c5?q=80&w=1600&auto=format&fit=crop'"
+         alt="Peritajes y avalúos"
+         class="absolute inset-0 -z-10 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/10 to-transparent -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 flex items-center">
+      <div class="max-w-2xl bg-white/80 backdrop-blur rounded-3xl p-6 md:p-10 shadow">
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          Peritajes y Avalúos con <span class="text-brand-red">precisión</span> y <span class="text-brand-yellow">confianza</span>.
+        </h1>
+        <p class="mt-3 text-zinc-700">
+          Avalúos urbanos y rurales, peritajes técnicos y judiciales con respaldo profesional y legal.
+          Atención en Ibagué, Tolima y a nivel nacional.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#servicios" class="px-5 py-3 rounded-xl border border-brand-black/20 hover:border-brand-red">Ver servicios</a>
+          <a href="https://wa.me/573219397333" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-semibold mb-6">Nuestros Servicios</h3>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 border rounded-xl shadow-sm">
-        <h4 class="font-semibold text-lg mb-2">Avalúos Urbanos</h4>
-        <p class="text-sm text-gray-600">Casas, apartamentos, lotes urbanos para compra, venta o trámites notariales.</p>
+  <section id="servicios" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Servicios de Peritajes y Avalúos</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Avalúos Urbanos</h3>
+        <p class="text-sm text-zinc-600">Casas, apartamentos, locales, lotes urbanos. Fines comerciales, notariales y financieros.</p>
       </div>
-      <div class="p-6 border rounded-xl shadow-sm">
-        <h4 class="font-semibold text-lg mb-2">Avalúos Rurales</h4>
-        <p class="text-sm text-gray-600">Fincas, cultivos, terrenos rurales y avalúos integrales con mejoras.</p>
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Avalúos Rurales</h3>
+        <p class="text-sm text-zinc-600">Fincas, cultivos, terrenos con y sin mejoras. Enfoque técnico y de mercado.</p>
       </div>
-      <div class="p-6 border rounded-xl shadow-sm">
-        <h4 class="font-semibold text-lg mb-2">Peritajes Judiciales</h4>
-        <p class="text-sm text-gray-600">Auxiliares de la justicia, dictámenes periciales y soporte legal especializado.</p>
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Avalúos Judiciales</h3>
+        <p class="text-sm text-zinc-600">Dictámenes para procesos judiciales, sucesiones, liquidaciones y expropiaciones.</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Peritajes Técnicos</h3>
+        <p class="text-sm text-zinc-600">Fisuras, humedad, patologías de construcción, vecindad, PH y cumplimiento normativo.</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Informes y Soporte Legal</h3>
+        <p class="text-sm text-zinc-600">Informes claros, anexos técnicos y acompañamiento en audiencias si se requiere.</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow-sm">
+        <h3 class="font-semibold text-lg mb-2">Consultoría Inmobiliaria</h3>
+        <p class="text-sm text-zinc-600">Asesoría en compra/venta, valorización, due diligence y riesgos técnicos.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <a href="brochure.pdf" target="_blank" class="px-5 py-3 rounded-xl bg-zinc-900 text-white hover:brightness-95">Descargar Brochure (PDF)</a>
+      <a href="https://wa.me/573219397333" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Cotizar por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section id="proceso" class="bg-zinc-50">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Proceso de trabajo</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p class="text-sm font-semibold text-zinc-500">1. Contacto</p>
+          <p class="mt-2 text-sm text-zinc-700">Recibimos tu solicitud y definimos alcance y tiempos.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p class="text-sm font-semibold text-zinc-500">2. Visita técnica</p>
+          <p class="mt-2 text-sm text-zinc-700">Inspección en sitio, registro fotográfico y levantamiento.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p class="text-sm font-semibold text-zinc-500">3. Análisis</p>
+          <p class="mt-2 text-sm text-zinc-700">Estudio de mercado, normativa y criterios técnicos.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p class="text-sm font-semibold text-zinc-500">4. Entrega</p>
+          <p class="mt-2 text-sm text-zinc-700">Informe y anexos en PDF. Acompañamiento si se requiere.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Nosotros -->
-  <section id="nosotros" class="bg-gray-50 py-16 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-2xl font-semibold mb-4">Quiénes Somos</h3>
-      <p class="text-gray-600">
-        En IBR contamos con experiencia profesional en avalúos y peritajes de bienes inmuebles urbanos y rurales. 
-        Ofrecemos informes claros, técnicos y legales que garantizan seguridad en tus decisiones inmobiliarias.
-      </p>
-    </div>
+  <!-- Por qué elegirnos -->
+  <section id="por-que" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">¿Por qué elegirnos?</h2>
+    <ul class="grid md:grid-cols-2 gap-4">
+      <li class="flex gap-3"><span class="text-brand-red">✔</span> Enfoque técnico y legal con informes claros y sustentados.</li>
+      <li class="flex gap-3"><span class="text-brand-red">✔</span> Experiencia en avalúos urbanos y rurales, y peritajes judiciales.</li>
+      <li class="flex gap-3"><span class="text-brand-red">✔</span> Atención oportuna y comunicación directa por WhatsApp.</li>
+      <li class="flex gap-3"><span class="text-brand-red">✔</span> Cobertura: Ibagué, Tolima y a nivel nacional.</li>
+    </ul>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-semibold mb-6 text-center">Contacto</h3>
-    <div class="grid md:grid-cols-2 gap-6 text-center md:text-left">
-      <div>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/573219397333" class="text-red-600 hover:underline">+57 321 939 7333</a></p>
-        <p><strong>Email:</strong> <a href="mailto:info@ibringenieria.co" class="text-red-600 hover:underline">info@ibringenieria.co</a></p>
-        <p><strong>Ciudad:</strong> Ibagué, Tolima — Colombia</p>
-      </div>
-      <div>
-        <p class="text-gray-600">Escríbenos y recibe asesoría rápida y profesional en peritajes y avalúos.</p>
+  <section id="contacto" class="bg-zinc-50">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center md:text-left">Contacto</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/573219397333" class="text-brand-red hover:underline">+57 321 939 7333</a></p>
+          <p class="mt-2"><strong>Email:</strong> <a href="mailto:info@ibringenieria.co" class="text-brand-red hover:underline">info@ibringenieria.co</a></p>
+          <p class="mt-2"><strong>Ciudad:</strong> Ibagué, Tolima — Colombia</p>
+          <div class="mt-4 flex gap-3">
+            <a href="https://wa.me/573219397333" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Escríbenos</a>
+            <a href="brochure.pdf" target="_blank" class="px-5 py-3 rounded-xl border">Ver Brochure</a>
+          </div>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border shadow-sm">
+          <p class="text-zinc-700 text-sm">
+            Cuéntanos el tipo de inmueble, ubicación y el objetivo del avalúo o peritaje (venta, proceso judicial, sucesión, PH, etc.). 
+            Te responderemos con tiempos y costos estimados.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600 border-t">
-    © <span id="y"></span> IBR Peritajes y Avalúos — Todos los derechos reservados.
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-zinc-600 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> IBR Peritajes & Avalúos — Todos los derechos reservados.</p>
+      <p>Desarrollado sobre GitHub Pages</p>
+    </div>
   </footer>
 
-  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
