@@ -82,30 +82,89 @@
   </header>
 
   <!-- Hero -->
-  <section id="hero" class="relative min-h-[58vh]">
-    <!-- Cambia a fondo.jpg si lo subiste -->
-    <img src="logoIBR.jpg"
-         onerror="this.src='https://images.unsplash.com/photo-1581091014534-8987c1d647c5?q=80&w=1600&auto=format&fit=crop'"
-         alt="Peritajes y avalúos"
-         class="absolute inset-0 -z-10 w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/10 to-transparent -z-10"></div>
+  <section id="hero" class="relative pb-10">
+  <!-- Fondo (puedes dejar tu <img> original si lo estás usando) -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/10 to-transparent z-10"></div>
 
-    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 flex items-center">
-      <div class="max-w-2xl bg-white/80 backdrop-blur rounded-3xl p-6 md:p-10 shadow">
+  <div class="relative z-20 max-w-7xl mx-auto px-4 py-10 md:py-16">
+    <!-- GRID 2 COLUMNAS: IZQ (copy hero) / DER (form) -->
+    <div class="grid md:grid-cols-2 items-start gap-6">
+      <!-- IZQUIERDA: TU TARJETA HERO -->
+      <div class="bg-white/90 backdrop-blur border rounded-2xl p-6 md:p-8 shadow-lg">
         <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-          Peritajes y Avalúos con <span class="text-brand-red">precisión</span> y <span class="text-brand-yellow">confianza</span>.
+          Peritajes y Avalúos con
+          <span class="text-brand-red">precisión</span> y
+          <span class="text-brand-yellow">confianza</span>.
         </h1>
-        <p class="mt-3 text-zinc-700">
-          Avalúos urbanos y rurales, peritajes técnicos y judiciales con respaldo profesional y legal.
-          Atención en Ibagué, Tolima y a nivel nacional.
+        <p class="mt-4 text-zinc-700">
+          Avalúos urbanos y rurales, peritajes técnicos y judiciales con respaldo
+          profesional y legal. Atención en Ibagué, Tolima y a nivel nacional.
         </p>
+
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="#servicios" class="px-5 py-3 rounded-xl border border-brand-black/20 hover:border-brand-red">Ver servicios</a>
-          <a href="https://wa.me/573219397333" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Solicitar cotización</a>
+          <a href="#servicios" class="px-5 py-3 rounded-xl border">Ver servicios</a>
+          <a href="#cotizacion-ibr" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Solicitar cotización</a>
         </div>
       </div>
+
+      <!-- DERECHA: MINI-FORM COTIZACIÓN EN HERO -->
+      <form id="formCotizacionHero"
+            class="bg-white/95 backdrop-blur border rounded-2xl p-6 md:p-7 shadow-lg sticky md:top-24">
+        <h3 class="text-xl font-semibold mb-1">Cotización rápida</h3>
+        <p class="text-sm text-zinc-600 mb-4">Responde 3 datos y te escribimos por WhatsApp.</p>
+
+        <div class="grid gap-3">
+          <div>
+            <label class="block text-sm font-medium">Nombre*</label>
+            <input required name="nombre" type="text"
+                   class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Tu nombre">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">WhatsApp*</label>
+            <input required name="whatsappCliente" type="tel"
+                   class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="+57 3xx xxx xxxx">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">Ubicación*</label>
+            <input required name="ubicacion" type="text"
+                   class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Ciudad / barrio o vereda">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">Servicio*</label>
+            <select required name="servicio"
+                    class="mt-1 w-full border rounded-lg px-3 py-2">
+              <option value="">Selecciona…</option>
+              <option>Peritaje urbano</option>
+              <option>Peritaje rural</option>
+              <option>Avalúo comercial</option>
+              <option>Avalúo judicial</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">Área (m²) — opcional</label>
+            <input name="area" type="number" min="1"
+                   class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Ej: 120">
+          </div>
+
+          <button type="submit"
+                  class="mt-2 px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">
+            Enviar por WhatsApp
+          </button>
+
+          <a href="#cotizacion-ibr" class="text-sm underline text-zinc-600">
+            Necesito más opciones (formulario completo)
+          </a>
+        </div>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Servicios -->
   <section id="servicios" class="max-w-7xl mx-auto px-4 py-16">
