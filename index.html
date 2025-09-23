@@ -186,6 +186,115 @@
 </section>
 
   </section>
+<!-- COTIZACIÓN RÁPIDA (WhatsApp) -->
+<section id="cotizacion" class="max-w-7xl mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">Cotización rápida</h2>
+  <p class="text-sm text-zinc-600 mb-6">Diligencia los datos y te contactaremos por WhatsApp.</p>
+
+  <form id="formCotizacion" class="grid md:grid-cols-2 gap-4 bg-white border rounded-2xl p-6 shadow-sm">
+    <div>
+      <label class="block text-sm font-medium">Nombre completo*</label>
+      <input required name="nombre" type="text" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Tu nombre">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">WhatsApp del solicitante*</label>
+      <input required name="whatsappCliente" type="tel" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="+57 3xx xxx xxxx">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Correo (opcional)</label>
+      <input name="email" type="email" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="tucorreo@dominio.com">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Tipo de inmueble*</label>
+      <select required name="tipo" class="mt-1 w-full border rounded-lg px-3 py-2">
+        <option value="">Selecciona…</option>
+        <option>Vivienda urbana</option>
+        <option>Apartamento</option>
+        <option>Local comercial</option>
+        <option>Lote urbano</option>
+        <option>Finca / rural</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Área (m²)*</label>
+      <input required name="area" type="number" min="1" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Ej: 200">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Ubicación (ciudad/barrio/vereda)*</label>
+      <input required name="ubicacion" type="text" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Ibagué, barrio… / Municipio, vereda…">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Estrato (si aplica)</label>
+      <input name="estrato" type="number" min="1" max="6" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="1–6">
+    </div>
+    <div>
+      <label class="block text-sm font-medium">Año de construcción (aprox.)</label>
+      <input name="anio" type="number" min="1900" max="2100" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Ej: 2015">
+    </div>
+    <div class="md:col-span-2">
+      <label class="block text-sm font-medium">Servicio requerido*</label>
+      <select required name="servicio" class="mt-1 w-full border rounded-lg px-3 py-2">
+        <option value="">Selecciona…</option>
+        <option>Avalúo comercial</option>
+        <option>Peritaje técnico / judicial</option>
+        <option>Licencia de construcción / trámite</option>
+        <option>Diseños / planos</option>
+        <option>Interventoría / dirección de obra</option>
+        <option>Remodelación / obra</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div class="md:col-span-2">
+      <label class="block text-sm font-medium">Descripción breve</label>
+      <textarea name="descripcion" rows="3" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Cuéntanos el objetivo, estado del inmueble y tiempos estimados…"></textarea>
+    </div>
+
+    <div class="md:col-span-2 flex flex-col sm:flex-row gap-3 mt-2">
+      <button type="submit" class="px-5 py-3 rounded-xl bg-brand-red text-white hover:brightness-95">Enviar por WhatsApp</button>
+      <a href="#contacto" class="px-5 py-3 rounded-xl border">Contactar por otros medios</a>
+    </div>
+  </form>
+</section>
+
+<script>
+  // Envío a WhatsApp con mensaje prellenado
+  document.getElementById('formCotizacion').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const f = e.target;
+    const datos = {
+      nombre: f.nombre.value.trim(),
+      whatsappCliente: f.whatsappCliente.value.trim(),
+      email: f.email.value.trim(),
+      tipo: f.tipo.value,
+      area: f.area.value.trim(),
+      ubicacion: f.ubicacion.value.trim(),
+      estrato: f.estrato.value.trim(),
+      anio: f.anio.value.trim(),
+      servicio: f.servicio.value,
+      descripcion: f.descripcion.value.trim()
+    };
+
+    const numero = "573219397333"; // TU número de WhatsApp (sin +)
+    const lineas = [
+      "📝 *Solicitud de cotización*",
+      `👤 Nombre: ${datos.nombre}`,
+      `📱 WhatsApp cliente: ${datos.whatsappCliente}`,
+      datos.email ? `✉️ Email: ${datos.email}` : null,
+      `🏠 Tipo de inmueble: ${datos.tipo}`,
+      `📐 Área: ${datos.area} m²`,
+      `📍 Ubicación: ${datos.ubicacion}`,
+      datos.estrato ? `🏷️ Estrato: ${datos.estrato}` : null,
+      datos.anio ? `📅 Año construcción: ${datos.anio}` : null,
+      `🧰 Servicio: ${datos.servicio}`,
+      datos.descripcion ? `🗒️ Descripción: ${datos.descripcion}` : null
+    ].filter(Boolean);
+
+    const texto = lineas.join("%0A"); // saltos de línea
+    const url = `https://wa.me/${numero}?text=${texto}`;
+    window.open(url, "_blank");
+  });
+</script>
 
 
 
